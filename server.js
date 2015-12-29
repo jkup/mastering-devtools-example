@@ -4,6 +4,8 @@ var bodyParser       = require('body-parser')
 var unirest          = require('unirest');
 var app              = express();
 
+app.set('view engine', 'jade');
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(expressSanitizer());
