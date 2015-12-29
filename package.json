@@ -1,0 +1,19 @@
+{
+  "name": "mastering-devtools-example",
+  "version": "1.0.0",
+  "description": "Example app for Mastering Chrome Devtools webinar ",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jkup/mastering-devtools-example.git"
+  },
+  "author": "Jon Kuperman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jkup/mastering-devtools-example/issues"
+  },
+  "homepage": "https://github.com/jkup/mastering-devtools-example#readme"
+}
