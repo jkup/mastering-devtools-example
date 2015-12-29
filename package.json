@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/jkup/mastering-devtools-example#readme",
   "dependencies": {
+    "body-parser": "^1.14.2",
     "express": "^4.13.3",
+    "express-sanitizer": "^1.0.1",
     "unirest": "^0.4.2"
   }
 }

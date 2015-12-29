@@ -1,15 +1,19 @@
-var express = require('express');
-var unirest = require('unirest');
-var app = express();
+var express          = require('express');
+var expressSanitizer = require('express-sanitizer');
+var bodyParser       = require('body-parser')
+var unirest          = require('unirest');
+var app              = express();
 
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(expressSanitizer());
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
 app.get('/get/:username', function (req, res) {
-  const user = req.params.username;
+  const user = req.sanitize(req.params.username);
 
   unirest.get("https://ismaelc-pinterest.p.mashape.com/" + user + "/boards")
   .header("X-Mashape-Key", "LrCc1gyiCTmshSvy6HHx3HcuBeolp1ftf2ojsnmqoUt7UkPTop")
