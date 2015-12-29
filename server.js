@@ -4,7 +4,7 @@ var app = express();
 app.use(express.static('public'));
 
 app.get('/', function (req, res) {
-  res.send('Hello World!');
+  res.sendFile(__dirname + '/views/index.html');
 });
 
 var server = app.listen(3000, function () {
