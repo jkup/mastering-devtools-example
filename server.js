@@ -8,8 +8,10 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-app.get('/kelly', function (req, res) {
-  unirest.get("https://ismaelc-pinterest.p.mashape.com/deviantdiy/boards")
+app.get('/get/:username', function (req, res) {
+  const user = req.params.username;
+
+  unirest.get("https://ismaelc-pinterest.p.mashape.com/" + user + "/boards")
   .header("X-Mashape-Key", "LrCc1gyiCTmshSvy6HHx3HcuBeolp1ftf2ojsnmqoUt7UkPTop")
   .header("Accept", "application/json")
   .end(function (result) {
