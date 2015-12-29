@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(expressSanitizer());
 
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/views/index.html');
+  res.render('index');
 });
 
 app.get('/get/:username', function (req, res) {
@@ -21,8 +21,7 @@ app.get('/get/:username', function (req, res) {
   .header("X-Mashape-Key", "LrCc1gyiCTmshSvy6HHx3HcuBeolp1ftf2ojsnmqoUt7UkPTop")
   .header("Accept", "application/json")
   .end(function (result) {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(JSON.stringify(result.body.body));
+    res.render('list', {results: result.body.body})
   });
 });
 
